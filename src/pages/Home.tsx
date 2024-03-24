@@ -7,35 +7,8 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
 const Home = () => {
-	const [email, setEmail] = useState("");
-	const [isLoading, setIsLoading] = useState(false);
 
-	const handlesubmit = (e) => {
-		e.preventDefault();
 
-		// ServiceId, templateID, publickey
-		const serviceId: string = "service_xb34dlf";
-		const templateId: string = "template_aq5lamq";
-		const publicKey = "MQyDG0_rTqyh7cNIX";
-
-		const templateParams = {
-			from_email: email,
-			to_name: "Sol-Nexus",
-		};
-
-		setIsLoading(true);
-
-		emailjs
-			.send(serviceId, templateId, publicKey, templateParams)
-			.then((res) => {
-				console.log("email sent successfully", res);
-				setEmail("");
-				setIsLoading(false);
-			})
-			.catch((err) => {
-				console.error("Error sending email", err);
-			});
-	};
 
 	return (
 		<div className="wishlist-wrp">
@@ -57,8 +30,6 @@ const Home = () => {
 							<form onSubmit={handlesubmit}>
 								<Input
 									placeholder="email address"
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
 									w={"100%"}
 									size={"md"}
 									radius={"20px"}
