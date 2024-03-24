@@ -36,7 +36,6 @@ const About = () => {
 				</div>
 			</header>
 			<div className="aboutcardcont">
-				
 				{/* our mission */}
 				<div className="ourmission aboutflex">
 					<div className="aboutitems">
@@ -84,20 +83,6 @@ const About = () => {
 					<div className="ourvaluecardcont">
 						<div className="ourvaluecard">
 							<div className="icon">
-								<HiOutlineLightBulb />
-							</div>
-							<h1>Innovation</h1>
-							<p>
-								We believe in pushing the boundaries of what's possible. Our
-								team is dedicated to fostering a culture of innovation where
-								creative ideas are welcomed, and experimentation is encouraged.
-								We continuously explore new technologies, methodologies, and
-								approaches to enhance our platform and deliver groundbreaking
-								solutions to our users
-							</p>
-						</div>
-						<div className="ourvaluecard">
-							<div className="icon">
 								<FaHandshakeSimple />
 							</div>
 							<h1>Integrity</h1>
@@ -109,6 +94,20 @@ const About = () => {
 								align with our values and commitments. Trust is paramount, and
 								we strive to earn and maintain the trust of our users, partners,
 								and stakeholders through our integrity and reliability.
+							</p>
+						</div>
+						<div className="ourvaluecard">
+							<div className="icon">
+								<HiOutlineLightBulb />
+							</div>
+							<h1>Innovation</h1>
+							<p>
+								We believe in pushing the boundaries of what's possible. Our
+								team is dedicated to fostering a culture of innovation where
+								creative ideas are welcomed, and experimentation is encouraged.
+								We continuously explore new technologies, methodologies, and
+								approaches to enhance our platform and deliver groundbreaking
+								solutions to our users
 							</p>
 						</div>
 						<div className="ourvaluecard">

@@ -233,7 +233,6 @@
 
 				@include responsiveness(medium) {
 					grid-template-columns: repeat(2, 1fr);
-					
 				}
 
 				@include responsiveness(small) {
@@ -245,7 +244,7 @@
 				}
 
 				.ourvaluecard {
-					background-color: #8a1313;
+					background-color: #0b462b;
 					padding: 20px;
 					border-radius: 20px;
 
@@ -257,13 +256,14 @@
 						justify-content: center;
 						font-size: 1.5rem;
 						border-radius: 5px;
-						background-color: #640a0a6e;
+						background-color: #0a3d26;
 					}
+				
 				}
 				.ourvaluecard:nth-child(2) {
-					background-color: #0b462b;
+					background-color: #8a1313;
 					.icon {
-						background-color: #0a3d26;
+						background-color: #640a0a6e;
 					}
 				}
 
