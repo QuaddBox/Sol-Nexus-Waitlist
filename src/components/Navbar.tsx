@@ -4,7 +4,18 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/solnexus.png";
 import { Image } from "@mantine/core";
 
+import { RiMenu2Line } from "react-icons/ri";
+import { LiaTimesSolid } from "react-icons/lia";
+import Navmenu from "./Navmenu";
+import { useState } from "react";
+
 const Navbar = () => {
+	const [menu, setMenu] = useState(false);
+
+	const showMenu = () => {
+		setMenu((prevmenu) => !prevmenu);
+	};
+
 	return (
 		<nav>
 			<div className="navcontents">
@@ -22,7 +33,12 @@ const Navbar = () => {
 						Whitepaper
 					</NavLink>
 				</div>
+				<div className="navmenu-icon" onClick={showMenu}>
+					{!menu ? <RiMenu2Line /> : <LiaTimesSolid />}
+				</div>
 			</div>
+
+			<div className="navmenu-modal">{menu && <Navmenu />}</div>
 		</nav>
 	);
 };

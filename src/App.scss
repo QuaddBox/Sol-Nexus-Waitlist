@@ -53,10 +53,46 @@ nav {
 				transition: background-color 0.5s ease-in-out;
 			}
 
-		}
-		@include responsiveness(medium) {
-			.navlinks {
+			@include responsiveness(medium) {
 				display: none;
+			}
+		}
+		.navmenu-icon {
+			display: none;
+
+			@include responsiveness(medium) {
+				display: block;
+				font-size: 25px;
+			}
+		}
+	}
+
+	.navmenu-modal {
+		display: none;
+
+		@include responsiveness(medium) {
+			display: flex;
+			justify-content: flex-end;
+			transition: all 2s ease-in-out !important;
+			padding: 0px 3%;
+			backdrop-filter: blur(20px);
+			transform: translateY(0px);
+		}
+
+		.nav-menu-links {
+			display: flex;
+			flex-direction: column;
+			background-color: #050505f8;
+			padding: 10px 3%;
+			width: 100%;
+			z-index: 7;
+
+			& a {
+				color: #c9c9c9;
+				font-size: 18px;
+				padding: 10px 0px;
+				border-bottom: 2px solid #13011a;
+				text-decoration: none;
 			}
 		}
 	}
@@ -65,6 +101,8 @@ nav {
 .wishlist-wrp {
 	padding: 0px 3%;
 	width: 100%;
+	margin: 0px auto;
+	// max-width: 950px;
 
 	.wishlist-cont {
 		margin: 0px auto;
@@ -96,24 +134,30 @@ nav {
 			margin: 0px auto;
 
 			& img {
-				width: 200px;
-				height: 200px;
+				width: 180px;
+				height: 180px;
 
 				object-fit: cover;
+
+				@include responsiveness(medium) {
+					width: 150px;
+					height: 150px;
+				}
 			}
 
 			& h1 {
 				font-size: 3.5rem;
+				text-align: center;
 				@include responsiveness(medium) {
-					font-size: 2.5rem;
+					font-size: 2.8rem;
 				}
 
 				@include responsiveness(small) {
-					font-size: 1.5rem;
+					font-size: 1.8rem;
 				}
 
 				@include responsiveness(xs) {
-					font-size: 1rem;
+					font-size: 1.8rem;
 				}
 			}
 
@@ -121,11 +165,44 @@ nav {
 				padding: 15px 35%;
 				text-align: center;
 				font-size: 20px;
+
+				@include responsiveness(medium) {
+					padding: 15px 20%;
+				}
+
+				@include responsiveness(small) {
+					padding: 15px 15%;
+					font-size: 18px;
+				}
+
+				@include responsiveness(xs) {
+					padding: 15px 8%;
+				}
+			}
+		}
+
+		.wishlist-form-cont {
+			@include responsiveness(medium) {
+				width: 70% !important;
+			}
+
+			@include responsiveness(small) {
+				// background-color: red !important;
+				width: 70% !important;
+				padding-top: 5px;
+			}
+
+			@include responsiveness(xs) {
+				width: 85% !important;
 			}
 		}
 
 		.mantine-Input-wrapper {
 			border-radius: 20px;
+
+			@include responsiveness(small) {
+				width: 100%;
+			}
 		}
 
 		.mantine-Input-input {

@@ -36,6 +36,8 @@ const About = () => {
 				</div>
 			</header>
 			<div className="aboutcardcont">
+				
+				{/* our mission */}
 				<div className="ourmission aboutflex">
 					<div className="aboutitems">
 						<h1>Our Mission</h1>
@@ -54,6 +56,8 @@ const About = () => {
 						<BsFillRocketTakeoffFill />
 					</div>
 				</div>
+
+				{/* our vision */}
 				<div className="ourvision aboutflex">
 					<div className="abouticon">
 						<IoTelescopeSharp />

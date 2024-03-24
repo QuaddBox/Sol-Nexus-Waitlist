@@ -1,5 +1,25 @@
 /** @format */
 
+@mixin responsiveness($breakpoint) {
+	@if ($breakpoint == medium) {
+		@media (width <= 990px) {
+			@content;
+		}
+	}
+
+	@if ($breakpoint == small) {
+		@media (width <= 675px) {
+			@content;
+		}
+	}
+
+	@if ($breakpoint == xs) {
+		@media (width <= 450px) {
+			@content;
+		}
+	}
+}
+
 .aboutuswrp {
 	width: 100%;
 	color: white !important;
@@ -7,6 +27,14 @@
 	.aboutheader {
 		padding: 0px 3%;
 		height: 600px;
+
+		@include responsiveness(medium) {
+			height: max-content;
+		}
+
+		@include responsiveness(xs) {
+			height: 450px;
+		}
 	}
 	.bg {
 		position: relative;
@@ -63,12 +91,30 @@
 		& h1 {
 			font-size: 3rem;
 			text-align: center;
+
+			@include responsiveness(xs) {
+				font-size: 1.5rem !important;
+			}
+
+			@include responsiveness(medium) {
+				font-size: 2rem;
+			}
 		}
 
 		.about-header-text {
 			text-align: center;
 			padding: 0px 18%;
 			font-size: 18px;
+
+			@include responsiveness(xs) {
+				padding: 0px 0px;
+				font-size: 15px;
+			}
+
+			@include responsiveness(medium) {
+				padding: 10px 2%;
+				width: 100%;
+			}
 		}
 	}
 
@@ -84,9 +130,9 @@
 		background-color: #0b010f;
 		padding: 2rem 0px;
 
-		// rgba(19, 18, 18, 0.925)
-
-		// rgba(12, 11, 11, 0.671)
+		@include responsiveness(medium) {
+			padding: 2rem 3%;
+		}
 
 		.aboutflex {
 			display: flex;
@@ -95,10 +141,26 @@
 			gap: 20px;
 			color: #e7e7e7;
 
+			@include responsiveness(xs) {
+				flex-direction: column;
+			}
+
 			.aboutitems {
 				width: 40%;
+
+				@include responsiveness(small) {
+					width: 60%;
+				}
+
+				@include responsiveness(xs) {
+					width: 100%;
+				}
 				& h1 {
 					font-size: 3rem;
+
+					@include responsiveness(small) {
+						font-size: 2rem;
+					}
 				}
 			}
 
@@ -111,6 +173,21 @@
 				padding: 100px;
 				font-size: 6rem;
 				border-radius: 10px;
+
+				@include responsiveness(medium) {
+					width: 40%;
+					font-size: 5rem;
+				}
+
+				@include responsiveness(xs) {
+					width: 100%;
+				}
+			}
+		}
+
+		.ourmission {
+			@include responsiveness(xs) {
+				flex-direction: column-reverse;
 			}
 		}
 
@@ -128,21 +205,41 @@
 		justify-content: center;
 		align-items: center;
 
-    .ourvaluehead {
-      font-size: 4rem;
-      color: #e7e7e7;
-    }
+		.ourvaluehead {
+			font-size: 4rem;
+			color: #e7e7e7;
+
+			@include responsiveness(xs) {
+				font-size: 2rem;
+			}
+		}
 
 		.ourvalueitems {
 			background-color: #0b010f;
-      border-radius: 20px;
+			border-radius: 20px;
 			padding: 45px;
 
+			@include responsiveness(xs) {
+				padding: 4rem 2%;
+			}
+
 			.ourvaluecardcont {
-				display: flex;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
 				align-items: center;
 				gap: 20px;
 				margin: 2rem auto;
+				width: 100%;
+
+				@include responsiveness(medium) {
+					grid-template-columns: repeat(2, 1fr);
+					
+				}
+
+				@include responsiveness(small) {
+					grid-template-columns: repeat(1, 1fr);
+				}
+
 				& h1 {
 					font-weight: 600;
 				}
@@ -151,30 +248,35 @@
 					background-color: #8a1313;
 					padding: 20px;
 					border-radius: 20px;
+
 					.icon {
 						width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            border-radius: 5px;
+						height: 50px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-size: 1.5rem;
+						border-radius: 5px;
 						background-color: #640a0a6e;
 					}
 				}
 				.ourvaluecard:nth-child(2) {
 					background-color: #0b462b;
-          .icon {
-            background-color: #0a3d26;
-          }
+					.icon {
+						background-color: #0a3d26;
+					}
 				}
 
 				.ourvaluecard:nth-child(3) {
 					background-color: #05635b;
 
-          .icon {
-            background-color: #04413bad;
-          }
+					.icon {
+						background-color: #04413bad;
+					}
+
+					@include responsiveness(medium) {
+						// grid-column: 1/3;
+					}
 				}
 			}
 		}

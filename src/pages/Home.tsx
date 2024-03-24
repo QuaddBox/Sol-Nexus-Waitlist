@@ -52,7 +52,7 @@ const Home = () => {
 						to use
 					</p>
 
-					<Flex align={"center"} justify={"center"} w={"30%"}>
+					<Flex align={"center"} justify={"center"} w={"30%"} className="wishlist-form-cont">
 						<Box pos={"relative"} w={"100%"}>
 							<form onSubmit={handlesubmit}>
 								<Input
