@@ -1,15 +1,10 @@
 /** @format */
 
-import { Box, Button, Flex, Image, Input, Loader } from "@mantine/core";
+import { Box, Button, Flex, Image, Input } from "@mantine/core";
 
 import logo from "../assets/solnexus.gif";
-import emailjs from "@emailjs/browser";
-import { useState } from "react";
 
 const Home = () => {
-
-
-
 	return (
 		<div className="wishlist-wrp">
 			<div className="wishlist-cont">
@@ -25,9 +20,13 @@ const Home = () => {
 						to use
 					</p>
 
-					<Flex align={"center"} justify={"center"} w={"30%"} className="wishlist-form-cont">
+					<Flex
+						align={"center"}
+						justify={"center"}
+						w={"30%"}
+						className="wishlist-form-cont">
 						<Box pos={"relative"} w={"100%"}>
-							<form onSubmit={handlesubmit}>
+							<form>
 								<Input
 									placeholder="email address"
 									w={"100%"}
@@ -52,11 +51,7 @@ const Home = () => {
 										radius={"20px"}
 										type="submit"
 										className="button">
-										{isLoading ? (
-											<Loader color="white" size={"sm"} />
-										) : (
-											"Join Waitlist"
-										)}
+										Join Waitlist
 									</Button>
 								</Flex>
 							</form>
