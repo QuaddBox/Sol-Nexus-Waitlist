@@ -9,19 +9,18 @@ import { IconArrowRight } from "@tabler/icons-react";
 
 import logo from "../assets/solnexus.gif";
 import { waitListEmailInput } from "../inputs";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { api } from "../api/axios";
 
 import { notifications } from "@mantine/notifications";
-import ApiState from "../interface/api.interface";
 // import { useState } from "react";
 
-type ResponseState = {
+interface ResponseState {
 	message: string;
-};
+}
 
 const Home = () => {
-	const [response, setResponse] = useState<ApiState>({ message: "" });
+	const [response, setResponse] = useState<ResponseState>({ message: "" });
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const waitlist = useForm({
 		validate: zodResolver(waitlistSchema),
@@ -48,8 +47,8 @@ const Home = () => {
 	};
 
 	// handling submit
-	const handleSubmit = (data: waitListEmailInput, e) => {
-		e.preventDefault();
+	const handleSubmit = (data: waitListEmailInput, e?: FormEvent<HTMLFormElement> ) => {
+		if (e) e.preventDefault();
 		console.log(data);
 
 		sendWaitlist(data);
