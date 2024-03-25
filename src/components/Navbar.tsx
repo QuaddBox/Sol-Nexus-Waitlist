@@ -53,9 +53,7 @@ const Navbar = () => {
 								frameBorder="0"
 								allowfullscreen=""
 								allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-								loading="lazy">
-								Listen Now
-							</iframe>
+								loading="lazy"></iframe>
 						</div>
 					</Modal>
 					<div className="spotify">
