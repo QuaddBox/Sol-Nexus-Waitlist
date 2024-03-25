@@ -14,7 +14,7 @@ import Navmenu from "./Navmenu";
 import { useState } from "react";
 
 const Navbar = () => {
-	const [menu, setMenu] = useState(false);
+	const [menu, setMenu] = useState<boolean>(false);
 
 	const showMenu = () => {
 		setMenu((prevmenu) => !prevmenu);

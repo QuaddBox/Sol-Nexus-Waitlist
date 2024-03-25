@@ -1,6 +1,7 @@
 /** @format */
 
-import { Box, Button, Flex, Image, Input } from "@mantine/core";
+import { ActionIcon, Box, Flex, Image, rem, TextInput } from "@mantine/core";
+import { IconArrowRight } from "@tabler/icons-react";
 
 import logo from "../assets/solnexus.gif";
 
@@ -27,33 +28,26 @@ const Home = () => {
 						className="wishlist-form-cont">
 						<Box pos={"relative"} w={"100%"}>
 							<form>
-								<Input
-									placeholder="email address"
+								<TextInput
+									radius={"xl"}
+									size="md"
 									w={"100%"}
-									size={"md"}
-									radius={"20px"}
-									bg={"dark"}
-									color="#d4d3d3"
-									className="searchinput"
+									placeholder="input email"
+									rightSectionWidth={42}
+									rightSection={
+										<ActionIcon
+											className="joinwailistbtn"
+											size={32}
+											radius={"xl"}
+											color="#360a5f"
+											variant="filled">
+											<IconArrowRight
+												style={{ width: rem(18), height: rem(18) }}
+												stroke={1.5}
+											/>
+										</ActionIcon>
+									}
 								/>
-
-								<Flex
-									align={"center"}
-									justify={"center"}
-									pos={"absolute"}
-									top={"5px"}
-									bottom={"5px"}
-									right={"0px"}
-									bg={"#530e75"}
-									style={{ borderRadius: "20px" }}>
-									<Button
-										size="sm"
-										radius={"20px"}
-										type="submit"
-										className="button">
-										Join Waitlist
-									</Button>
-								</Flex>
 							</form>
 						</Box>
 					</Flex>
