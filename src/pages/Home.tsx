@@ -28,6 +28,7 @@ const Home = () => {
 		initialValues: { email: "" },
 	});
 
+	// Api fetch
 	const sendWaitlist = (data: waitListEmailInput) => {
 		console.log(data);
 
@@ -46,6 +47,7 @@ const Home = () => {
 			});
 	};
 
+	// handling submit
 	const handleSubmit = (data: waitListEmailInput, e) => {
 		e.preventDefault();
 		console.log(data);
