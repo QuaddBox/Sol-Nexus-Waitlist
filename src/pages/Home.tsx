@@ -70,7 +70,7 @@ const Home = () => {
 	useEffect(() => {
 		const { message } = response;
 		if (message)
-			if (!response.message?.includes("email"))
+			if (response.message?.includes("email"))
 				notifications.show({
 					color: "red",
 					title: "Failed",
