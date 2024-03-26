@@ -28,6 +28,12 @@ nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		.spotify {
+			@include responsiveness(medium) {
+				display: block !important;
+			}
+			// background-color: red;
+		}
 
 		.navlinks {
 			display: flex;
@@ -219,8 +225,6 @@ nav {
 			background-color: #530e75;
 		}
 	}
-
-
 }
 
 .footercont {

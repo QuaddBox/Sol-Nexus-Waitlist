@@ -31,46 +31,46 @@ const Navbar = () => {
 					</NavLink>
 				</div>
 
-				<div className="navwrp">
-					<Modal
-						opened={opened}
-						onClose={close}
-						centered
-						transitionProps={{
-							transition: "fade",
-							duration: 600,
-							timingFunction: "linear",
-						}}
-						className="modal">
-						<h1 className="modalhead-text">
-							Listen to our dev's playlist while you wait
-						</h1>
-						<div className="modalbtn">
-							<iframe
-								src="https://open.spotify.com/embed/playlist/5e7S1ZKrEpBqoxyOG4opBl?utm_source=generator&theme=0"
-								width="100%"
-								height="352"
-								frameBorder="0"
-								allowFullScreen
-								allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-								loading="lazy"></iframe>
-						</div>
-					</Modal>
-					<div className="spotify">
-						<Button bg={"none"} onClick={open}>
-							<FaSpotify fontSize={"25px"} color="#1DB954" cursor={"pointer"} />
-						</Button>
+				<Modal
+					opened={opened}
+					onClose={close}
+					centered
+					transitionProps={{
+						transition: "fade",
+						duration: 600,
+						timingFunction: "linear",
+					}}
+					className="modal">
+					<h1 className="modalhead-text">
+						Listen to our dev's playlist while you wait
+					</h1>
+					<div className="modalbtn">
+						<iframe
+							src="https://open.spotify.com/embed/playlist/5e7S1ZKrEpBqoxyOG4opBl?utm_source=generator&theme=0"
+							width="100%"
+							height="352"
+							frameBorder="0"
+							allowFullScreen
+							allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+							loading="lazy"></iframe>
 					</div>
-					<div className="navlinks">
-						<NavLink to={"about"}>About Us</NavLink>
+				</Modal>
 
-						<NavLink
-							to={"https://solnexus.gitbook.io/solnexus/"}
-							className="whitepaper">
-							Whitepaper
-						</NavLink>
-					</div>
+				<div className="spotify">
+					<Button bg={"none"} onClick={open}>
+						<FaSpotify fontSize={"25px"} color="#1DB954" cursor={"pointer"} />
+					</Button>
 				</div>
+				<div className="navlinks">
+					<NavLink to={"about"}>About Us</NavLink>
+
+					<NavLink
+						to={"https://solnexus.gitbook.io/solnexus/"}
+						className="whitepaper">
+						Whitepaper
+					</NavLink>
+				</div>
+
 				<div className="navmenu-icon" onClick={showMenu}>
 					{!menu ? <RiMenu2Line /> : <LiaTimesSolid />}
 				</div>
