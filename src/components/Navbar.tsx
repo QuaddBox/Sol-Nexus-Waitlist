@@ -55,20 +55,21 @@ const Navbar = () => {
 							loading="lazy"></iframe>
 					</div>
 				</Modal>
+				<div className="userwrp">
+					<div className="spotify">
+						<Button bg={"none"} onClick={open}>
+							<FaSpotify fontSize={"25px"} color="#1DB954" cursor={"pointer"} />
+						</Button>
+					</div>
+					<div className="navlinks">
+						<NavLink to={"about"}>About Us</NavLink>
 
-				<div className="spotify">
-					<Button bg={"none"} onClick={open}>
-						<FaSpotify fontSize={"25px"} color="#1DB954" cursor={"pointer"} />
-					</Button>
-				</div>
-				<div className="navlinks">
-					<NavLink to={"about"}>About Us</NavLink>
-
-					<NavLink
-						to={"https://solnexus.gitbook.io/solnexus/"}
-						className="whitepaper">
-						Whitepaper
-					</NavLink>
+						<NavLink
+							to={"https://solnexus.gitbook.io/solnexus/"}
+							className="whitepaper">
+							Whitepaper
+						</NavLink>
+					</div>
 				</div>
 
 				<div className="navmenu-icon" onClick={showMenu}>
