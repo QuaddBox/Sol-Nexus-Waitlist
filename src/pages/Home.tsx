@@ -1,6 +1,14 @@
 /** @format */
 
-import { ActionIcon, Box, Flex, Image, rem, TextInput } from "@mantine/core";
+import {
+	ActionIcon,
+	Box,
+	Flex,
+	Image,
+	Loader,
+	rem,
+	TextInput,
+} from "@mantine/core";
 import { useForm, zodResolver } from "@mantine/form";
 
 import { waitlistSchema } from "../schema";
@@ -9,19 +17,19 @@ import { IconArrowRight } from "@tabler/icons-react";
 
 import logo from "../assets/solnexus.gif";
 import { waitListEmailInput } from "../inputs";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { api } from "../api/axios";
 
 import { notifications } from "@mantine/notifications";
-import ApiState from "../interface/api.interface";
+
 // import { useState } from "react";
 
-type ResponseState = {
+interface ResponseState {
 	message: string;
-};
+}
 
 const Home = () => {
-	const [response, setResponse] = useState<any>();
+	const [response, setResponse] = useState<ResponseState>({ message: "" });
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const waitlist = useForm({
 		validate: zodResolver(waitlistSchema),
@@ -48,21 +56,25 @@ const Home = () => {
 	};
 
 	// handling submit
-	const handleSubmit = (data: waitListEmailInput, e) => {
-		e.preventDefault();
+	const handleSubmit = (
+		data: waitListEmailInput,
+		e?: FormEvent<HTMLFormElement>,
+	) => {
+		if (e) e.preventDefault();
 		console.log(data);
 
 		sendWaitlist(data);
 	};
 
 	useEffect(() => {
+		const { message } = response;
 		if (message)
-		if (response.message?.includes("email"))
-			notifications.show({
-				color: "red",
-				title: "Failed",
-				message: "Email has already been waitlisted taken",
-			});
+			if (response.message?.includes("email"))
+				notifications.show({
+					color: "red",
+					title: "Failed",
+					message: "Email has already been waitlisted taken",
+				});
 
 		if (response.message?.includes("Email waitlisted")) {
 			notifications.show({
@@ -110,10 +122,14 @@ const Home = () => {
 											radius={"xl"}
 											color="#360a5f"
 											variant="filled">
-											<IconArrowRight
-												style={{ width: rem(18), height: rem(18) }}
-												stroke={1.5}
-											/>
+											{isLoading ? (
+												<Loader size={"sm"} color="white" />
+											) : (
+												<IconArrowRight
+													style={{ width: rem(18), height: rem(18) }}
+													stroke={1.5}
+												/>
+											)}
 										</ActionIcon>
 									}
 								/>
