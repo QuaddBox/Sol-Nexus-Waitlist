@@ -52,6 +52,7 @@ const Home = () => {
 			})
 			.catch((err) => {
 				console.error(err);
+				setIsLoading(false);
 			});
 	};
 
@@ -69,11 +70,11 @@ const Home = () => {
 	useEffect(() => {
 		const { message } = response;
 		if (message)
-			if (response.message?.includes("email"))
+			if (!response.message?.includes("email"))
 				notifications.show({
 					color: "red",
 					title: "Failed",
-					message: "Email has already been waitlisted taken",
+					message: "Email has already been waitlisted",
 				});
 
 		if (response.message?.includes("Email waitlisted")) {
