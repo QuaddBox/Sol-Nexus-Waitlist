@@ -70,10 +70,9 @@ const Navbar = () => {
 							Whitepaper
 						</NavLink>
 					</div>
-				</div>
-
-				<div className="navmenu-icon" onClick={showMenu}>
-					{!menu ? <RiMenu2Line /> : <LiaTimesSolid />}
+					<div className="navmenu-icon" onClick={showMenu}>
+						{!menu ? <RiMenu2Line /> : <LiaTimesSolid />}
+					</div>
 				</div>
 			</div>
 
