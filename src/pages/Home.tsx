@@ -21,7 +21,7 @@ type ResponseState = {
 };
 
 const Home = () => {
-	const [response, setResponse] = useState<ApiState>({ message: "" });
+	const [response, setResponse] = useState<any>();
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const waitlist = useForm({
 		validate: zodResolver(waitlistSchema),
@@ -56,14 +56,13 @@ const Home = () => {
 	};
 
 	useEffect(() => {
-		const { message } = response;
 		if (message)
-			if (response.message?.includes("email"))
-				notifications.show({
-					color: "red",
-					title: "Failed",
-					message: "Email has already been waitlisted taken",
-				});
+		if (response.message?.includes("email"))
+			notifications.show({
+				color: "red",
+				title: "Failed",
+				message: "Email has already been waitlisted taken",
+			});
 
 		if (response.message?.includes("Email waitlisted")) {
 			notifications.show({
